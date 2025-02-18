@@ -1,0 +1,37 @@
+﻿@page
+@model T4_RazorPages.Pages.ViewSalesEmployeeModel
+@{
+	ViewData["Title"] = "Llistat SalesEmployee";
+}
+
+<h2>Llistat de SalesEmployee</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Primer Cognom</th>
+			<th>Any de naixament</th>
+			<th>Codi</th>
+			<th>Any de contractament</th>
+			<th>Salari Mensual</th>
+			<th>Pagaments</th>
+			<th>Comissio</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var salesEmployee in Model.salesEmployees)
+		{
+				<tr>
+					<td>@salesEmployee.Name</td>
+					<td>@salesEmployee.LastName</td>
+					<td>@salesEmployee.DateBirth</td>
+					<td>@salesEmployee.Code</td>
+					<td>@salesEmployee.HireDate</td>
+					<td>@salesEmployee.MonthSalary</td>
+					<td>@salesEmployee.Payments</td>
+					<td>@salesEmployee.Commission</td>
+				</tr>	
+		}
+	</tbody>
+</table>
